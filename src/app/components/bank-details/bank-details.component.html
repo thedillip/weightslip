@@ -13,7 +13,9 @@
       />
     </div>
     <p class="text-danger">{{ errorMessage }}</p>
-    <button (click)="getBankDetails()" class="btn btn-success">Submit</button>
+    <button (click)="getBankDetailsFromRazorPayApi()" class="btn btn-success">
+      Submit
+    </button>
   </form>
 </div>
 
@@ -31,51 +33,51 @@
     <tbody>
       <tr>
         <th scope="row">Micr Code</th>
-        <td>{{ bankDetails.micrCode }}</td>
+        <td>{{ bankDetails.MICR }}</td>
       </tr>
       <tr>
         <th scope="row">Branch Name</th>
-        <td>{{ bankDetails.branchName }}</td>
+        <td>{{ bankDetails.BRANCH }}</td>
       </tr>
       <tr>
         <th scope="row">Address</th>
-        <td>{{ bankDetails.address }}</td>
+        <td>{{ bankDetails.ADDRESS }}</td>
       </tr>
       <tr>
         <th scope="row">State</th>
-        <td>{{ bankDetails.state }}</td>
+        <td>{{ bankDetails.STATE }}</td>
       </tr>
       <tr>
         <th scope="row">Contact</th>
-        <td>{{ bankDetails.contact }}</td>
+        <td>{{ bankDetails.CONTACT }}</td>
       </tr>
       <tr>
         <th scope="row">City Name</th>
-        <td>{{ bankDetails.cityName }}</td>
+        <td>{{ bankDetails.CITY }}</td>
       </tr>
       <tr>
         <th scope="row">Center</th>
-        <td>{{ bankDetails.center }}</td>
+        <td>{{ bankDetails.CENTRE }}</td>
       </tr>
       <tr>
         <th scope="row">District</th>
-        <td>{{ bankDetails.district }}</td>
+        <td>{{ bankDetails.DISTRICT }}</td>
       </tr>
       <tr>
         <th scope="row">Swift</th>
-        <td>{{ bankDetails.swift }}</td>
+        <td>{{ bankDetails.SWIFT }}</td>
       </tr>
       <tr>
         <th scope="row">Bank Name</th>
-        <td>{{ bankDetails.bankName }}</td>
+        <td>{{ bankDetails.BANK }}</td>
       </tr>
       <tr>
         <th scope="row">Bank Code</th>
-        <td>{{ bankDetails.bankCode }}</td>
+        <td>{{ bankDetails.BANKCODE }}</td>
       </tr>
       <tr>
         <th scope="row">Ifsc Code</th>
-        <td>{{ bankDetails.ifscCode }}</td>
+        <td>{{ bankDetails.IFSC }}</td>
       </tr>
     </tbody>
   </table>
