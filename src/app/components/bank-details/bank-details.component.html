@@ -1,0 +1,82 @@
+<h3 class="text-center mt-5">Check Bank Details By IFSC Code</h3>
+<div class="container mt-5 text-center">
+  <form>
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        id="ifscCode"
+        placeholder="Enter the IFSC Code"
+        [(ngModel)]="ifscCode"
+        name="ifscCode"
+        style="text-transform: uppercase"
+      />
+    </div>
+    <p class="text-danger">{{ errorMessage }}</p>
+    <button (click)="getBankDetails()" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+<div class="container loader mt-5" *ngIf="spinner">
+  <div class="d-flex justify-content-center">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5 pb-3" *ngIf="showBankDetailsDiv">
+  <table class="table table-bordered">
+    <thead></thead>
+    <tbody>
+      <tr>
+        <th scope="row">Micr Code</th>
+        <td>{{ bankDetails.micrCode }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Branch Name</th>
+        <td>{{ bankDetails.branchName }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Address</th>
+        <td>{{ bankDetails.address }}</td>
+      </tr>
+      <tr>
+        <th scope="row">State</th>
+        <td>{{ bankDetails.state }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Contact</th>
+        <td>{{ bankDetails.contact }}</td>
+      </tr>
+      <tr>
+        <th scope="row">City Name</th>
+        <td>{{ bankDetails.cityName }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Center</th>
+        <td>{{ bankDetails.center }}</td>
+      </tr>
+      <tr>
+        <th scope="row">District</th>
+        <td>{{ bankDetails.district }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Swift</th>
+        <td>{{ bankDetails.swift }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Bank Name</th>
+        <td>{{ bankDetails.bankName }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Bank Code</th>
+        <td>{{ bankDetails.bankCode }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Ifsc Code</th>
+        <td>{{ bankDetails.ifscCode }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
