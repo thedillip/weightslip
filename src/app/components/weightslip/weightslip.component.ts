@@ -150,8 +150,8 @@ export class WeightslipComponent implements OnInit {
     const messageContent: string = `
       Hi Dillip, someone has used your WeighSlip web application, Please find the details below.
       
-      Address - ${this.weightSlipPayload.address},
-      Vehicle Number - ${this.weightSlipPayload.vehicleNumber},
+      Address - ${this.weightSlipPayload.address.toUpperCase()},
+      Vehicle Number - ${this.weightSlipPayload.vehicleNumber.toUpperCase()},
       Gross Weight - ${this.weightSlipPayload.grossWeight},
       Tare Wight - ${this.weightSlipPayload.tareWeight},
       Gross Weight Date - ${this.weightSlipPayload.grossWeightDate},
