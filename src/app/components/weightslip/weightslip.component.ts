@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AppRoutingModule } from 'src/app/app-routing.module';
+import { ApiResponseObject } from 'src/app/interface/ApiResponseObject';
+import { SendMessagePayload } from 'src/app/interface/SendMessagePayload';
 import { ReportService } from 'src/app/service/report.service';
 import Swal from 'sweetalert2';
 
@@ -97,6 +99,7 @@ export class WeightslipComponent implements OnInit {
         // window.open(fileURL);
 
         this.isProgress = false;
+        this.sendMessage();
         Swal.fire({
           icon: 'success',
           title: 'Success &#128540;',
@@ -141,5 +144,38 @@ export class WeightslipComponent implements OnInit {
     let regex: RegExp = new RegExp(indianVehicleNumberRegex);
     let flag = regex.test(indianVehicleNumber);
     return regex.test(indianVehicleNumber);
+  }
+
+  sendMessage() {
+    const messageContent: string = `
+      Hi Dillip, someone has used your WeighSlip web application, Please find the details below.
+      
+      Address - ${this.weightSlipPayload.address},
+      Vehicle Number - ${this.weightSlipPayload.vehicleNumber},
+      Gross Weight - ${this.weightSlipPayload.grossWeight},
+      Tare Wight - ${this.weightSlipPayload.tareWeight},
+      Gross Weight Date - ${this.weightSlipPayload.grossWeightDate},
+      Tare Weight Date - ${this.weightSlipPayload.tareWeightDate}
+
+      Thanks & Regards,
+      Dizo - By Dillip K Sahoo
+      `;
+
+    const requestPayload: SendMessagePayload = {
+      mobileNumber: '+918117941692',
+      message: messageContent,
+    };
+
+    this.service.sendMessage(requestPayload).subscribe({
+      next: (response: ApiResponseObject<String>) => {
+        console.log(response);
+      },
+      error: (error: Error) => {
+        console.error(error.message);
+      },
+      complete: () => {
+        console.log('sendMessage acivity completed');
+      },
+    });
   }
 }

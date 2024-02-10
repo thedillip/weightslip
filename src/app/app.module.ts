@@ -13,6 +13,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { WeightslipComponent } from './components/weightslip/weightslip.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BankDetailsComponent } from './components/bank-details/bank-details.component';
+import { AskQuestionComponent } from './components/ask-question/ask-question.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { BankDetailsComponent } from './components/bank-details/bank-details.com
     DashboardComponent,
     WeightslipComponent,
     FooterComponent,
-    BankDetailsComponent
+    BankDetailsComponent,
+    AskQuestionComponent
   ],
   imports: [
     BrowserModule,

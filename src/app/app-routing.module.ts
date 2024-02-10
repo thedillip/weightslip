@@ -6,6 +6,7 @@ import { LoginComponent } from './components/login/login.component';
 import { WeightslipComponent } from './components/weightslip/weightslip.component';
 import { AuthGuard } from './service/auth.guard';
 import { BankDetailsComponent } from './components/bank-details/bank-details.component';
+import { AskQuestionComponent } from './components/ask-question/ask-question.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,11 @@ const routes: Routes = [
   {
     path: 'bank-details',
     component: BankDetailsComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'ask',
+    component: AskQuestionComponent,
     pathMatch: 'full',
   },
   {
